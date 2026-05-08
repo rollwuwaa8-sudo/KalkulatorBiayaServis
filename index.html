@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Servis</title>
+    <title>Kalkulator Servis Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card">
         <h1>Kalkulator Servis</h1>
-        <p class="subtitle">Pilih layanan untuk estimasi biaya</p>
+        <p class="subtitle">Estimasi biaya servis transparan & cepat</p>
         
-        <div id="loading">Menghubungkan ke database...</div>
+        <div class="input-section">
+            <div class="input-group">
+                <label>Nama Pelanggan</label>
+                <input type="text" id="customer-name" placeholder="Nama Lengkap">
+            </div>
+            <div class="input-group">
+                <label>Plat Nomor / Seri Kendaraan</label>
+                <input type="text" id="plate-number" placeholder="Contoh: B 1234 ABC">
+            </div>
+        </div>
+
+        <div id="loading">Mengambil data tarif terbaru...</div>
         <div id="service-container"></div>
         
         <div class="total-box">
-            <span>Total Estimasi:</span>
+            <div class="summary-info">
+                <p id="display-name">Estimasi Total</p>
+                <span id="display-plate">Belum ada layanan dipilih</span>
+            </div>
             <span id="total-amount">Rp 0</span>
         </div>
+
+        <button id="wa-btn" class="btn-primary">Kirim Estimasi ke WhatsApp</button>
     </div>
     <script src="script.js"></script>
 </body>
